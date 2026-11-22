@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#efe6fb">
+<meta name="description" content="A little birthday surprise.">
+<title>kaihoverse · a little something for you</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="sky" aria-hidden="true"><div id="particles"></div></div>
+<canvas id="confetti" aria-hidden="true"></canvas>
+<div class="brand" aria-hidden="true">kaihoverse<i></i></div>
+
+<main id="stage">
+
+<!-- 1 · Opening -->
+<section class="scene is-active" aria-labelledby="t1">
+  <svg class="tiny-gift" viewBox="0 0 120 120" aria-hidden="true">
+    <rect x="20" y="52" width="80" height="56" rx="8" fill="#f7cfd8"/>
+    <rect x="14" y="40" width="92" height="20" rx="7" fill="#cdb8f0"/>
+    <rect x="54" y="40" width="12" height="68" fill="#d4a95a"/>
+    <path d="M60 40C44 14 20 24 36 38c8 6 24 2 24 2s16 4 24-2c16-14-8-24-24 2z" fill="none" stroke="#d4a95a" stroke-width="5" stroke-linejoin="round"/>
+  </svg>
+  <h1 id="t1">Someone made a little something for&nbsp;you…</h1>
+  <p class="sub">It only takes a minute. Tap when you’re ready.</p>
+  <button class="btn" data-next>Open it</button>
+</section>
+
+<!-- 2 · Birthday reveal -->
+<section class="scene" aria-labelledby="t2">
+  <h2 id="t2">Happy Birthday, <span data-name>you</span>!</h2>
+  <svg class="cake" id="cake" viewBox="0 0 240 220" role="img" aria-label="A three-tier birthday cake with three candles">
+    <ellipse cx="120" cy="198" rx="104" ry="12" fill="#cdb8f0"/>
+    <rect x="30" y="132" width="180" height="62" rx="14" fill="#f7cfd8"/>
+    <path d="M30 132H210V142Q195 160 180 142T150 142T120 142T90 142T60 142T30 142Z" fill="#fffaf1"/>
+    <rect x="56" y="90" width="128" height="46" rx="12" fill="#cdb8f0"/>
+    <path d="M56 90H184V100Q172 116 160 100T136 100T112 100T88 100T64 100Z" fill="#fffaf1"/>
+    <rect x="80" y="54" width="80" height="40" rx="10" fill="#fff0dc"/>
+    <path d="M80 54H160V63Q150 77 140 63T120 63T100 63T84 63Z" fill="#f7cfd8"/>
+    <g fill="#d4a95a"><circle cx="50" cy="170" r="3"/><circle cx="92" cy="176" r="3"/><circle cx="140" cy="172" r="3"/><circle cx="188" cy="168" r="3"/><circle cx="76" cy="118" r="2.5"/><circle cx="120" cy="122" r="2.5"/><circle cx="164" cy="116" r="2.5"/></g>
+    <g class="candle"><rect x="98" y="32" width="8" height="24" rx="3" fill="#d4a95a"/><path class="flame" d="M102 14c6 7 6 13 0 16-6-3-6-9 0-16z" fill="#ffcf6b"/></g>
+    <g class="candle"><rect x="116" y="28" width="8" height="28" rx="3" fill="#f7cfd8" stroke="#d4a95a"/><path class="flame" d="M120 10c6 7 6 13 0 16-6-3-6-9 0-16z" fill="#ffcf6b"/></g>
+    <g class="candle"><rect x="134" y="32" width="8" height="24" rx="3" fill="#d4a95a"/><path class="flame" d="M138 14c6 7 6 13 0 16-6-3-6-9 0-16z" fill="#ffcf6b"/></g>
+  </svg>
+  <p class="sub" id="wishline" aria-live="polite">Make a wish, then blow out the candles.</p>
+  <div class="row">
+    <button class="btn ghost" id="blow">Blow out the candles</button>
+    <button class="btn" data-next>Keep going</button>
+  </div>
+</section>
+
+<!-- 3 · Appreciation -->
+<section class="scene" aria-labelledby="t3">
+  <h2 id="t3">A few things worth saying</h2>
+  <article class="note" id="note" aria-live="polite"><h3></h3><p></p></article>
+  <div class="dots" id="dots" aria-hidden="true"></div>
+  <button class="btn" id="noteNext">Another one</button>
+</section>
+
+<!-- 4 · Gift -->
+<section class="scene" aria-labelledby="t4">
+  <h2 id="t4">One more thing…</h2>
+  <button class="gift" id="gift" aria-expanded="false" aria-controls="giftWish" aria-label="Open the gift box">
+    <span class="lid"></span><span class="box"></span>
+    <span class="spark s1"></span><span class="spark s2"></span><span class="spark s3"></span>
+  </button>
+  <p class="sub" id="giftHint">Tap the box.</p>
+  <div class="wish-card" id="giftWish" hidden><p></p></div>
+  <button class="btn" data-next id="giftNext" hidden>Continue</button>
+</section>
+
+<!-- 5 · Wishes -->
+<section class="scene" aria-labelledby="t5">
+  <h2 id="t5">Birthday wishes</h2>
+  <ul class="wishes" id="wishes"></ul>
+  <button class="btn" data-next>One last page</button>
+</section>
+
+<!-- 6 · Closing -->
+<section class="scene night" aria-labelledby="t6">
+  <div class="stars" id="stars" aria-hidden="true"></div>
+  <h2 id="t6">Have a wonderful year ahead!</h2>
+  <p class="sub" id="signoff"></p>
+  <p class="sign" id="signname"></p>
+  <button class="btn ghost" id="replay">Watch it again</button>
+</section>
+
+</main>
+<footer class="foot">Made by hand · no tracking, no cookies</footer>
+<script src="script.js"></script>
+</body>
+</html>
